@@ -9,7 +9,7 @@ Early diagnosis of cardiovascular diseases is a crucial task in medical practice
 
 #### Index Terms— Computer audition, federated learning, heart sound, information security, model interpretability
 
-![](Graphical Abstract.jpg)
+![](/figures/Graphical Abstract.jpg)
  
 Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (FL) on multi-institutional heart sound databases.
  
@@ -27,10 +27,10 @@ Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (F
  
 Table 2. A SUMMARY OF RESULTS (IN [%]) FOR CLASSIC XGBOOST AND THE  HFL MODEL WITH OPTIMAL PARAMETERS.
 
-| Model      | Acc         | Se        |    Sp    |   UF1     |    UAR    |
+|            | Acc         | Se        |    Sp    |   UF1     |    UAR    |
 | -----      | -----       | ----      |----      |----       |----       |
 | XGBoost    |  68.4       | 69.1      |67.6      | 68.4      |   68.4    |
-| Homogeneous-SecureBoost  |  67.5       | 62.1      |72.8      | 67.4      |   67.5    |
+| Homogeneous-SecureBoost  |  67.5     | 62.1     |72.8       | 67.4      |   67.5    |
 
 Important parameters settings for the HFL and the XGBoost: tree depth=3,  tree number=30, subsample feature rate=1.0, learning rate=0.3.
 
@@ -41,9 +41,9 @@ Important parameters settings for the HFL and the XGBoost: tree depth=3,  tree n
  
  Table 2. COMPARISON OF THE RESULTS (IN [%]) OF THE CONVENTIONAL  XGBOOST AND HETEROGENEOUS SECUREBOOST MODELS ON DATA  FOR EACH INSTITUTION.
 
-|            | XGBoost(Centralised Data)                                  |Heterogeneous-SecureBoost       |
-|            | Acc         | Se        |    Sp    |       UAR    | Acc         | Se        |    Sp    |   UAR    |
-| -----      | -----       | ----      |----      |----       |----       |-----        | ----      |----      |----      |
+|            | XGBoost(Centralised Data)        |Heterogeneous-SecureBoost       |
+|            | Acc       | Se      |    Sp   |  UAR    | Acc     | Se      |    Sp   |   UAR  |
+| -----      | -----     | ----    |----     |----     |----     |-----    | ----    |----    |
 | Db         |  86.7     |85.2     |88.3     |86.8     |82.7     |82.0     |83.5     |82.7    |
 | Dc         |  86.7     |85.7     |87.5     |86.6     |93.3     |85.7     |92.0     |92.9    |
 | Dd         |  93.3     |87.5     |92.0     |93.8     |96.2     |89.6     |96.4     |97.2    |
