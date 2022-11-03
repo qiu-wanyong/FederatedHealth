@@ -9,7 +9,7 @@ Early diagnosis of cardiovascular diseases is a crucial task in medical practice
 
 #### Index Terms— Computer audition, federated learning, heart sound, information security, model interpretability
 
-![](/figures/Graphical Abstract.jpg)
+![](/figures/Graphical_Abstract.jpg)
  
 Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (FL) on multi-institutional heart sound databases.
  
