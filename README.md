@@ -10,7 +10,7 @@ Early diagnosis of cardiovascular diseases is a crucial task in medical practice
 #### Index Terms— Computer audition, federated learning, heart sound, information security, model interpretability
 
 ![](/Graphical Abstract.jpg)
-
+ 
 Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (FL) on multi-institutional heart sound databases.
  
 ## Main contributions:
@@ -23,35 +23,55 @@ Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (F
   
  ![](/figures/HFL_results.jpg)
  
- Fig. 2. Fig. (a)-(b) show the variation of the performance (in [%]) of the  HFL model with the number of trees. Fig. (c)-(d) shows the variation of  the performance (in [%]) of the HFL. model with tree depth.
+ Fig. 4. Fig. (a)-(b) show the variation of the performance (in [%]) of the  HFL model with the number of trees. Fig. (c)-(d) shows the variation of  the performance (in [%]) of the HFL. model with tree depth.
  
-Table 2. Optimal values for the depth and number of trees; summary of experimental results (in [%]).
+Table 2. A SUMMARY OF RESULTS (IN [%]) FOR CLASSIC XGBOOST AND THE  HFL MODEL WITH OPTIMAL PARAMETERS.
 
 | Model      | Acc         | Se        |    Sp    |   UF1     |    UAR    |
-| -----      | -----       | ----      |----      |----       |
+| -----      | -----       | ----      |----      |----       |----       |
 | XGBoost    |  68.4       | 69.1      |67.6      | 68.4      |   68.4    |
-| Homogeneous-
-SecureBoost  |  67.5       | 62.1      |72.8      | 67.4      |   67.5    |
+| Homogeneous-SecureBoost  |  67.5       | 62.1      |72.8      | 67.4      |   67.5    |
 
+Important parameters settings for the HFL and the XGBoost: tree depth=3,  tree number=30, subsample feature rate=1.0, learning rate=0.3.
 
-The important parameters are set, e. g., learning rate=0.3, subsample feature rate=1.0, and other parameters to their default values.
-
- ![](/figures/matrix.jpg)
+ ![](/figures/HFL_matrix.jpg)
  
- Fig. 3. Normalised confusion matrix (in [%]) of the FL.
+ Fig. 3. Normalised confusion matrix (in [%]) for the XGBoost and  Horizontal-SecureBoost models.
  
-![](/figures/shap1.jpg)
+ 
+ Table 2. COMPARISON OF THE RESULTS (IN [%]) OF THE CONVENTIONAL  XGBOOST AND HETEROGENEOUS SECUREBOOST MODELS ON DATA  FOR EACH INSTITUTION.
 
-(a) The contribution of significant auDeep features from all class predictions for the XGBoost model (average feature importance).
+|            | XGBoost(Centralised Data)                                  |Heterogeneous-SecureBoost       |
+|            | Acc         | Se        |    Sp    |   UF1     |    UAR    | Acc         | Se        |    Sp    |   UF1     |    UAR    |
+| -----      | -----       | ----      |----      |----       |----       |-----        | ----      |----      |----       |----       |
+| Db         |  86.7     |85.2     |88.3     |86.8     |82.7     |82.0     |83.5     |82.7    |
+| Dc         |  86.7     |85.7     |87.5     |86.6     |93.3     |85.7     |92.0     |92.9    |
+| Dd         |  93.3     |87.5     |92.0     |93.8     |96.2     |89.6     |96.4     |97.2    |
+| De         |  88.2     |85.6     |86.7     |87.8     |87.6     |82.6     |86.3     |84.3    |
+| Df         |  86.8     |90.9     |81.3     |86.1     |79.5     |75.5     |71.3     |78.4    |
+
+
+![](/figures/VFL_matrix.jpg)
+ 
+Fig. 5. Normalised confusion matrix (in [%]) for XGBoost and Vertically-  SecureBoost models trained at D e database.
+
+![](/figures/MMD.jpg)
+ 
+Fig. 6. Normalised confusion matrix (in [%]) for XGBoost and Vertically-  SecureBoost models trained at D e database.
+
+![](/figures/shap1.jpg)  
+
+Fig.7 (a) and (c) show the summary bee-swarm plot of feature importance for the testing set of institutional database Db (Shapley values).  The plot sorts the features by the sum of Shapley value magnitudes for the abnormal class samples, and uses the Shapley values to show the  distribution of the impacts of each feature on the model output. The colour represents the feature value (red high, blue low). This reveals, for example,  that a higher Shapley value for MFCC (mfcc sam[1] quartile2 numeric) reduces the performance of abnormal predictions. Take the absolute mean  of Shapley values for each feature as the importance of that feature. Fig.7 (b) shows the average feature importance bar chart for the predictions of  the abnormal class, and Fig.7 (d) shows the results for all class predictions. (Note: To observe the change in importance of the federated features,  the feature ordering in Fig.7 (a) and (b) corresponds to each other, as do Fig.7 (c) and (d).)
   
 ![](/figures/shap2.jpg)
 
 (b) The contribution of significant auDeep features from all class predictions for the FL model (average feature importance).
 
-Fig. 4. The plot sorts the features by the mean of Shapley values for all class predictions and uses the Shapley values to show the average impact on the model output magnitude of the features. Top 10 most impactful features are shown above.
+Fig. 8. Waterfall plots can provide us with the interpretability of a single prediction, and we can observe how features affect the prediction of an  abnormal sample. The horizontal axis is the Shapley value and the vertical axis is the value taken for each feature of that sample. Blue means that  the feature has a negative effect on the prediction, and the left arrow indicates a decrease in Shapley value. Red means that the feature has a  positive effect on the prediction, and the right arrow indicates an increase in Shapley value. As shown in Fig.8 (a), E[f(x)] is the baseline value  of SHAP and Feature 1524 = 32.358 produces a negative impact of 0.5. Cumulatively, until we reach the current model output f(x) = -0.248. (An  example of abnormal sample  a0169.wav ).
   
 ## Availability
-1. KSoF: Access to the data can be requested from the Kassel State of Fluency (KSoF) dataset at https://zenodo.org/record/6801844.
+
+1. Classification of Heart Sound Recordings (PhysioNet/CinC challenge): https://physionet.org/content/challenge-2016/1.0.0.
 
 2. SHAP (SHapley Additive exPlanations) is a game-theoretic method to explain the output of ML models. https://shap.readthedocs.io.
 
@@ -67,6 +87,6 @@ Fig. 4. The plot sorts the features by the mean of Shapley values for all class 
 [4] Wanyong Qiu, Kun Qian, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu, Bjoern W Schuller, and Yoshiharu Yamamoto, A Federated Learning Paradigm for Heart Sound Classification, in Proceedings of the Engineering in Medicine &amp; Biology Society (EMBC). IEEE, 2022, pp. 1045 1048.
 
 ## Cite As
-Yongzi Yu, Wanyong Qiu, Chen Quan, Kun Qian, Zhihua Wang, Yu Ma, Bin Hu∗, Bjoern W. Schuller and Yoshiharu Yamamoto, “Federated intelligent terminals facilitate stuttering monitoring”, in Proceedings of ICASSP, pp. 1-5, Submitted, October 2022.
+Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu∗, Yoshiharu Yamamoto and Bjoern W. Schuller, “Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Ensemble Learning Framework”, JBHI, pp. 1-11, Submitted, October 2022.
 
 
