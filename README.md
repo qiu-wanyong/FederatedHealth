@@ -71,11 +71,13 @@ Fig. 8. Waterfall plots can provide us with the interpretability of a single pre
   
 ## Availability
 
-1. Classification of Heart Sound Recordings (PhysioNet/CinC challenge): https://physionet.org/content/challenge-2016/1.0.0.
+1. Voice of the Body (VoB) 是第一个计算机听觉医学数据库平台，用于对体音信号进行分析. https://www.vob-bit.org/
 
-2. SHAP (SHapley Additive exPlanations) is a game-theoretic method to explain the output of ML models. https://shap.readthedocs.io.
+2. Classification of Heart Sound Recordings (PhysioNet/CinC challenge): https://physionet.org/content/challenge-2016/1.0.0.
 
-3. FATE (Federated AI Technology Enabler) supports the FL architecture, as well as the secure computation and development of various ML algorithms. https://github.com/FederatedAI/FATE.
+3. SHAP (SHapley Additive exPlanations) is a game-theoretic method to explain the output of ML models. https://shap.readthedocs.io.
+
+4. FATE (Federated AI Technology Enabler) supports the FL architecture, as well as the secure computation and development of various ML algorithms. https://github.com/FederatedAI/FATE.
 
 ## References
 [1] Bjoern Schuller, Anton Batliner, Shahin Amiriparian, Christian Bergler, Maurice Gerczuk, Natalie Holz, Pauline Larrouy-Maestri, Sebastien Bayerl, Korbinian  Riedhammer, Adria Mallol-Ragolta, et al., The ACM Multimedia 2022 Computational Paralinguistics Challenge: Vocalisations, Stuttering, Activity, &amp; Mosquitoes, in Proceedings of the 30th ACM International Conference on Multimedia, 2022, pp. 7120 7124.
@@ -86,7 +88,6 @@ Fig. 8. Waterfall plots can provide us with the interpretability of a single pre
 
 [4] Wanyong Qiu, Kun Qian, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu, Bjoern W Schuller, and Yoshiharu Yamamoto, A Federated Learning Paradigm for Heart Sound Classification, in Proceedings of the Engineering in Medicine &amp; Biology Society (EMBC). IEEE, 2022, pp. 1045 1048.
 
-## Cite As
-Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu∗, Yoshiharu Yamamoto and Bjoern W. Schuller, “Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Ensemble Learning Framework”, JBHI, pp. 1-11, Submitted, October 2022.
+
 
 
