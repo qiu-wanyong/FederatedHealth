@@ -1,8 +1,12 @@
 # FederatedHealth_HeartSound
+面向智能体音感知的联邦学习系统-基于FATE平台：
 The horizontal FL (HFL) and vertical FL (VFL) paradigms for heart sound analysis.
 
+# 团队：Fed-healthcare(联邦医疗)
+
 # Algorithm_Model
-The source code and models for paper "Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Ensemble Learning Framework"
+
+The source code and models for 2022 FinTechathon "深圳国际金融科技大赛-西丽湖金融科技大学生挑战赛"
 
 ## Abstract
 Early diagnosis of cardiovascular diseases is a crucial task in medical practice. With the application of computer audition in the healthcare field, artificial intelligence (AI) has been applied to clinical non-invasive intelligent auscultation of heart sounds to provide rapid and effective pre-screening. However, AI models generally require large amounts of data which may cause privacy issues. Unfortunately, it is difficult to collect large amounts of healthcare data from a single centre. In this study, we propose federated learning (FL) optimisation strategies for the practical application in multi-centre institutional heart sound databases. The horizontal federated learning is mainly employed to tackle the privacy problem by aligning the feature spaces of the participants without information leakage. In addition, techniques based on deep learning have poor interpretability due to their ``black-box" property, which limits the feasibility of AI in real medical data. To this end, vertical federated learning is utilised to address the issues of model interpretability and data scarcity. Experimental results demonstrate that, the proposed FL framework can achieve good performance for heart sound abnormality detection by taking the personal privacy protection into account. Moreover, the interpretability of the vertical FL model can be improved by using the federated feature space.
