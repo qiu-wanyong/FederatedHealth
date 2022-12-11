@@ -31,7 +31,7 @@ Table 2. A SUMMARY OF RESULTS (IN [%]) FOR CLASSIC XGBOOST AND THE  HFL MODEL WI
 
 |            | Acc         | Se        |    Sp    |   UF1     |    UAR    |
 | -----      | -----       | ----      |----      |----       |----       |
-| XGBoost    |  68.4       | 69.1      |67.6      | 68.4      |   68.4    |
+| XGBoost(Centralised Data)|  68.4     | 69.1      |67.6      | 68.4      |   68.4    |
 | Homogeneous-SecureBoost  |  67.5     | 62.1     |72.8       | 67.4      |   67.5    |
 
 Important parameters settings for the HFL and the XGBoost: tree depth=3,  tree number=30, subsample feature rate=1.0, learning rate=0.3.
