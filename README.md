@@ -70,7 +70,17 @@ Fig.7 (a) and (c) show the summary bee-swarm plot of feature importance for the 
 (b) The contribution of significant auDeep features from all class predictions for the FL model (average feature importance).
 
 Fig. 8. Waterfall plots can provide us with the interpretability of a single prediction, and we can observe how features affect the prediction of an  abnormal sample. The horizontal axis is the Shapley value and the vertical axis is the value taken for each feature of that sample. Blue means that  the feature has a negative effect on the prediction, and the left arrow indicates a decrease in Shapley value. Red means that the feature has a  positive effect on the prediction, and the right arrow indicates an increase in Shapley value. As shown in Fig.8 (a), E[f(x)] is the baseline value  of SHAP and Feature 1524 = 32.358 produces a negative impact of 0.5. Cumulatively, until we reach the current model output f(x) = -0.248. (An  example of abnormal sample  a0169.wav ).
+
+## Awards
+
+Fed-heathcare Team Won the 2022 FinTechathon Competition First Prize! Congratulations!
   
+ ![](/figures/Awards11.png)
+ ![](/figures/Awards22.png)
+ 
+ 2022Fintechathon Shenzhen International FinTechathon Prize. https://www.infoq.cn/zones/fintechathon/campus2022/result
+
+
 ## Availability
 
 1. Voice of the Body (VoB) 是第一个计算机听觉医学数据库平台，用于对体音信号进行分析. https://www.vob-bit.org/
