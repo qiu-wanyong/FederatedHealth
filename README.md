@@ -75,7 +75,7 @@ Fig. 8. Waterfall plots can provide us with the interpretability of a single pre
 
 Fed-heathcare Team Won the 2022 FinTechathon Competition First Prize! Congratulations!
   
- ![](/figures/Award.jpg)
+ ![](/figures/Award1.jpg)
  ![](/figures/cup.jpg)
  
  2022Fintechathon Shenzhen International FinTechathon Prize. https://www.infoq.cn/zones/fintechathon/campus2022/result
