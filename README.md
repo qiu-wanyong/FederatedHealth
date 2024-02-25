@@ -21,31 +21,36 @@ Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (F
  * The VFL model in this study is used to solve the issue of unlabelled data for some federated institutions. Further, we propose an approach to balance model interpretability and patient privacy for VFL using Shapley values.
 
 ## Data
-Extract_features.py：Extract the data features of each medical institution and obtain sort_shap_(a-f).csv under the SHAP_results folder.
-Combine_features.py: Combine the features of each medical institution to obtain Combined_Shap_sort.csv under the SHAP_results folder.
-Sampling.py: Sample balancing through sampling.
-Write_newly_extracted_features.py：Feature importance analysis.
-Split_train_and_test.py: Split the training set and test set.
-Vertically_split.py: vertically split the dataset into Guest and Host parties.
+``Split_train_and_test.py:`` Split the training set and test set.
+``Vertically_split.py:`` Vertically split the dataset into ``Guest`` and ``Host`` parties.
+``Extract_features.py:`` Extract the data features of each medical institution.
+``Combine_features.py:`` Combine the features of each medical institution.
+``Sampling.py:`` Sample balancing through sampling.
+``Write_newly_extracted_features.py:`` Feature importance analysis.
+
 
 ## Running the experiments
-Predicted_data_of_hetero_secureboost: Horizontal federated learning (HFL) modeling comes from the FATE framework.
-Predicted_data_of_homo_secureboost: Vertical federated learning (VFL) modeling comes from the FATE framework.
-Models_exported_from_FATE: Exported relevant models from FATE.
-Plot_depth_for_UAR_UF1.py: hyperparameter fine-tuning on FL.
-Plot_MMD.py: Visualize distribution differences between datasets.
-Calculate_metrics.py: Calculate Sensitivity (Se), Specificity (Sp), UAR, UF1, and Accuracy (Acc).
+``Predicted_data_of_hetero_secureboost:`` Horizontal federated learning (HFL) modeling.
+``Predicted_data_of_homo_secureboost:`` Vertical federated learning (VFL) modeling.
+``Models_exported_from_FATE:`` Exported relevant models from FATE.
+``Plot_depth_for_UAR_UF1.py:`` Hyperparameter fine-tuning on FL.
+``Plot_MMD.py:`` Visualize distribution differences between datasets.
+``Calculate_metrics.py:`` Calculate Sensitivity (Se), Specificity (Sp), UAR, UF1, and Accuracy (Acc).
 
 ## Options
-The default values for various paramters parsed to the experiment are given in options.py. Details are given some of those parameters:
+Important parameters in the experiment are given in ``options.py``. Details are given some of those parameters:
+* ``gpu:`` Default: None (runs on CPU). Can also be set to the specific gpu id.
+* ``model:``
+Default: 'xgboost'. Options: 'approx',
+--(reg_lambda=0.1, reg_alpha=0).
+* ``tree_model:`` subsample=1.0, min_child_weight=0, max_bin=32.
+* ``max_depth:`` Maximum tree depth.
+* ``n_estimators::`` Number of trees.
+* ``lr:`` Learning rate set to 0.3.
+* ``seed:`` Random Seed. Default set to 1.
+* ``iid:`` Distribution of data amongst clients. Default set to IID. Set to 0 for non-IID.
+* ``frac:`` Fraction of users to be used for federated updates. Default is 0.1.
 
---model: Default: 'xgboost'. Options: 'approx'
---(tree_method='approx', max_depth=3, reg_lambda=0.1,
-                          reg_alpha=0, subsample=1.0, min_child_weight=0, max_bin=32)
---gpu: Default: None (runs on CPU). Can also be set to the specific gpu id.
---n_estimators: Number of rounds of training.
---lr: Learning rate set to 0.3 by default.
---seed: Random Seed. Default set to 1.
  
 ## Results
  * Horizontally-Federated Learning vs Data-Centralised Learning
