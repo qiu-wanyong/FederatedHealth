@@ -21,17 +21,17 @@ Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (F
  * The VFL model in this study is used to solve the issue of unlabelled data for some federated institutions. Further, we propose an approach to balance model interpretability and patient privacy for VFL using Shapley values.
 
 ## Data
-``Split_train_and_test.py:`` Split the training set and test set.
+``Split_train_and_test.py:`` Split the dataset into training and testing sets.
 ``Vertically_split.py:`` Vertically split the dataset into ``Guest`` and ``Host`` parties.
-``Extract_features.py:`` Extract the data features of each medical institution.
-``Combine_features.py:`` Combine the features of each medical institution.
+``Extract_features.py:`` Extract the features of each medical institution.
+``Combine_features.py:`` Combine the extracted features of each medical institution.
 ``Sampling.py:`` Sample balancing through sampling.
 ``Write_newly_extracted_features.py:`` Feature importance analysis.
 
 
 ## Running the experiments
-``Predicted_data_of_hetero_secureboost:`` Horizontal federated learning (HFL) modeling.
-``Predicted_data_of_homo_secureboost:`` Vertical federated learning (VFL) modeling.
+``Predicted_data_of_homo_secureboost:`` Horizontal federated learning (HFL) modelling.
+``Predicted_data_of_hetero_secureboost:`` Vertical federated learning (VFL) modelling.
 ``Models_exported_from_FATE:`` Exported relevant models from FATE.
 ``Plot_depth_for_UAR_UF1.py:`` Hyperparameter fine-tuning on FL.
 ``Plot_MMD.py:`` Visualize distribution differences between datasets.
