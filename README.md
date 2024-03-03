@@ -35,8 +35,8 @@ Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (F
 ``Models_exported_from_FATE:`` Exported relevant models from FATE.
 ``Plot_depth_for_UAR_UF1.py:`` Hyperparameter fine-tuning on FL.
 ``Plot_MMD.py:`` Visualize distribution differences between datasets.
-``SHAP_for_hetero_secureboost_1/2.py:`` SHAP feature bin experiments(Lightgbm Library).
-``Lightgbm_feature_bins_experiment_1/2.py:`` Model exported from FATE.
+``SHAP_for_hetero_secureboost_1/2.py:`` SHAP feature bin experiments (Lightgbm Library).
+``Lightgbm_feature_bins_experiment_1/2.py:`` Models exported from FATE.
 ``Calculate_metrics.py:`` Calculate Sensitivity (Se), Specificity (Sp), UAR, UF1, and Accuracy (Acc).
 
 ## Options
