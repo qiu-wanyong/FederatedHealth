@@ -4,7 +4,7 @@ The horizontal FL (HFL) and vertical FL (VFL) paradigms for heart sound analysis
 
 # Algorithm_Model
 
-The source code and models for paper "Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Ensemble Learning Framework"
+The source code and models for paper "Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Learning Framework"
 
 ## Abstract
 Early diagnosis of cardiovascular diseases is a crucial task in medical practice. With the application of computer audition in the healthcare field, artificial intelligence (AI) has been applied to clinical non-invasive intelligent auscultation of heart sounds to provide rapid and effective pre-screening. However, AI models generally require large amounts of data which may cause privacy issues. Unfortunately, it is difficult to collect large amounts of healthcare data from a single centre. In this study, we propose federated learning (FL) optimisation strategies for the practical application in multi-centre institutional heart sound databases. The horizontal federated learning is mainly employed to tackle the privacy problem by aligning the feature spaces of the participants without information leakage. In addition, techniques based on deep learning have poor interpretability due to their ``black-box" property, which limits the feasibility of AI in real medical data. To this end, vertical federated learning is utilised to address the issues of model interpretability and data scarcity. Experimental results demonstrate that, the proposed FL framework can achieve good performance for heart sound abnormality detection by taking the personal privacy protection into account. Moreover, the interpretability of the vertical FL model can be improved by using the federated feature space.
@@ -19,6 +19,40 @@ Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (F
  * This study has developed optimisation schemes for  HFL and VFL to analyse the applications of FL in different healthcare conditions and to verify the effectiveness of the models on multi-centre heart sound databases.
  * In the HFL modelling, we propose a privacy-preserving feature ID-based security aggregation method. It has the advantage of solving the issue of aligning the feature space of federated participants in HFL.
  * The VFL model in this study is used to solve the issue of unlabelled data for some federated institutions. Further, we propose an approach to balance model interpretability and patient privacy for VFL using Shapley values.
+
+## Data
+``Split_train_and_test.py:`` Split the dataset into training and testing sets.
+``Vertically_split.py:`` Vertically split the dataset into ``Guest`` and ``Host`` parties.
+``Extract_features.py:`` Extract the features of each medical institution.
+``Combine_features.py:`` Combine the extracted features of each medical institution.
+``Sampling.py:`` Sample balancing through sampling.
+``Write_newly_extracted_features.py:`` Feature importance analysis.
+
+
+## Running the experiments
+``Predicted_data_of_homo_secureboost:`` Horizontal federated learning (HFL) modelling.
+``Predicted_data_of_hetero_secureboost:`` Vertical federated learning (VFL) modelling.
+``Models_exported_from_FATE:`` Exported relevant models from FATE.
+``Plot_depth_for_UAR_UF1.py:`` Hyperparameter fine-tuning on FL.
+``Plot_MMD.py:`` Visualize distribution differences between datasets.
+``SHAP_for_hetero_secureboost_1/2.py:`` SHAP feature bin experiments (Lightgbm Library).
+``Lightgbm_feature_bins_experiment_1/2.py:`` Models exported from FATE.
+``Calculate_metrics.py:`` Calculate Sensitivity (Se), Specificity (Sp), UAR, UF1, and Accuracy (Acc).
+
+## Options
+Important parameters in the experiment are given in ``options.py``. Details are given some of those parameters:
+* ``gpu:`` Default: None (runs on CPU). Can also be set to the specific gpu id.
+* ``model:``
+Default: 'xgboost'. Options: 'approx',
+--(reg_lambda=0.1, reg_alpha=0).
+* ``tree_model:`` subsample=1.0, min_child_weight=0, max_bin=32.
+* ``max_depth:`` Maximum tree depth.
+* ``n_estimators::`` Number of trees.
+* ``lr:`` Learning rate set to 0.3.
+* ``seed:`` Random Seed. Default set to 1.
+* ``iid:`` Distribution of data amongst clients. Default set to IID. Set to 0 for non-IID.
+* ``frac:`` Fraction of users to be used for federated updates. Default is 0.1.
+
  
 ## Results
  * Horizontally-Federated Learning vs Data-Centralised Learning
@@ -31,7 +65,7 @@ Table 2. A SUMMARY OF RESULTS (IN [%]) FOR CLASSIC XGBOOST AND THE  HFL MODEL WI
 
 |            | Acc         | Se        |    Sp    |   UF1     |    UAR    |
 | -----      | -----       | ----      |----      |----       |----       |
-| XGBoost    |  68.4       | 69.1      |67.6      | 68.4      |   68.4    |
+| XGBoost(Centralised Data)|  68.4     | 69.1      |67.6      | 68.4      |   68.4    |
 | Homogeneous-SecureBoost  |  67.5     | 62.1     |72.8       | 67.4      |   67.5    |
 
 Important parameters settings for the HFL and the XGBoost: tree depth=3,  tree number=30, subsample feature rate=1.0, learning rate=0.3.
@@ -70,7 +104,17 @@ Fig.7 (a) and (c) show the summary bee-swarm plot of feature importance for the 
 (b) The contribution of significant auDeep features from all class predictions for the FL model (average feature importance).
 
 Fig. 8. Waterfall plots can provide us with the interpretability of a single prediction, and we can observe how features affect the prediction of an  abnormal sample. The horizontal axis is the Shapley value and the vertical axis is the value taken for each feature of that sample. Blue means that  the feature has a negative effect on the prediction, and the left arrow indicates a decrease in Shapley value. Red means that the feature has a  positive effect on the prediction, and the right arrow indicates an increase in Shapley value. As shown in Fig.8 (a), E[f(x)] is the baseline value  of SHAP and Feature 1524 = 32.358 produces a negative impact of 0.5. Cumulatively, until we reach the current model output f(x) = -0.248. (An  example of abnormal sample  a0169.wav ).
+
+## Awards
+
+Fed-heathcare Team Won the 2022 FinTechathon Competition First Prize! Congratulations!
   
+ ![](/figures/Award1.jpg)
+ ![](/figures/cup.jpg)
+ 
+ 2022Fintechathon Shenzhen International FinTechathon Prize. https://www.infoq.cn/zones/fintechathon/campus2022/result
+
+
 ## Availability
 
 1. Voice of the Body (VoB) 是第一个计算机听觉医学数据库平台，用于对体音信号进行分析. https://www.vob-bit.org/
@@ -91,6 +135,6 @@ Fig. 8. Waterfall plots can provide us with the interpretability of a single pre
 [4] Wanyong Qiu, Kun Qian, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu, Bjoern W Schuller, and Yoshiharu Yamamoto, A Federated Learning Paradigm for Heart Sound Classification, in Proceedings of the Engineering in Medicine &amp; Biology Society (EMBC). IEEE, 2022, pp. 1045 1048.
 
 ## Cite As
-Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu∗, Yoshiharu Yamamoto and Bjoern W. Schuller, “Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Ensemble Learning Framework”, JBHI, pp. 1-11, Submitted, October 2022.
+Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu∗, Yoshiharu Yamamoto and Bjoern W. Schuller, “Heart Sound Abnormality Detection from Multi-institutional Collaboration: Introducing a Federated Learning Framework”, IEEE TBME, pp. 1-11, Submitted, November 2023.
 
 
