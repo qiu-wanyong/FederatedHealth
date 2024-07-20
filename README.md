@@ -14,11 +14,6 @@ Early diagnosis of cardiovascular diseases is a crucial task in medical practice
 ![](/figures/Graphical_Abstract.jpg)
  
 Fig. 1. Paradigms and workflows of horizontal and vertical federated learning (FL) on multi-institutional heart sound databases.
- 
-## Main contributions:
- * This study has developed optimisation schemes for  HFL and VFL to analyse the applications of FL in different healthcare conditions and to verify the effectiveness of the models on multi-centre heart sound databases.
- * In the HFL modelling, we propose a privacy-preserving feature ID-based security aggregation method. It has the advantage of solving the issue of aligning the feature space of federated participants in HFL.
- * The VFL model in this study is used to solve the issue of unlabelled data for some federated institutions. Further, we propose an approach to balance model interpretability and patient privacy for VFL using Shapley values.
 
 ## Data
 ``Split_train_and_test.py:`` Split the dataset into training and testing sets.
