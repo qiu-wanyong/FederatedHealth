@@ -130,6 +130,6 @@ Fed-heathcare Team Won the 2022 FinTechathon Competition First Prize! Congratula
 [4] Wanyong Qiu, Kun Qian, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu, Bjoern W Schuller, and Yoshiharu Yamamoto, A Federated Learning Paradigm for Heart Sound Classification, in Proceedings of the Engineering in Medicine &amp; Biology Society (EMBC). IEEE, 2022, pp. 1045 1048.
 
 ## Cite As
-Qiu W, Quan C, Zhu L, et al. Heart Sound Abnormality Detection From Multi-Institutional Collaboration: Introducing a Federated Learning Framework[J]. IEEE Transactions on Biomedical Engineering, pp.1-12, 2024.
+Qiu W, Quan C, Zhu L, et al. Heart Sound Abnormality Detection From Multi-Institutional Collaboration: Introducing a Federated Learning Framework[J]. IEEE Transactions on Biomedical Engineering, vol.71, no.10, pp.2802-2813, Oct.2024.
 
 
